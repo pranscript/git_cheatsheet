@@ -1,143 +1,52 @@
-# Part 1
+# Intro
 	
-####Working directory, staging area, git repository and remote repository --- four stages
-####To start first time 
+#### Git has four Stages - Working directory, Staging Area, Local Repository and Remote repository 
 
 ```
-git config --global user.name "nAME" 
-git CONFIG --global user.email "fdfd"
-git config --global --list
+git config --global user.name "Your username"	// to set username 
+git CONFIG --global user.email "your@email.com"	// your email
+git config --global --list	// to see your global configs
 ```
-To get a repository in the local system - cloning
-
+#### To get a repository in the local system - Cloning
+#### To get a personal copy of someone else's repository - Forking
+#### Reference to the remote repository in github - Origin
 ```
-git clone url
-``` -- auto creates the directory with the same name
+git clone url	// to clone a repository into your system, auto creates the directorywoth the same name. Origin is also set automatically
+git status	// shows the current branch and status of the files. Shows info about untracked file or files ready to be committed
+echo "Test Content" >> test.txt	// To create the file with the text written on it
+cat test.txt	// To see the contents of the file
+git add start.txt	// To add the file from working directory to staging area and is ready to be commited. Now git is tracking the file
+git commit -m "First commit message"	// To commit the changes with a commit message
+git push origin master	// to push the local repository to remote repository. Remote name "origin". Branch name is "master"
 ```
+
+
+#Part 2
+
+ ```
+git init projectName	// initialize a new project
+ls -al	// show all files including hidden
+rm -rf newProject	// removes the directory
+mv oldname newname	// renames the directory
+git add .	// adds all files to the staging area from working directory
+git pull origin master	// Updates the local repository from the remote repository. It is a good practice to pull before push
+git commit -am "message"	// Add files to staging area and committing in a single step
+git ls-files	// To check if git is tracking the files or not
 ```
-git status
-``` -- tells that it is on the master branch -- and is it updated or not.
-working directory is where we do all the work and git monitors the changes
+
+
+# Part 3
+
+ ```
+git reset HEAD filename.txt	// to unstage the file from the staging area.
+git checkout --filename.ext	// back to the last commit, discard the changes made in the working directory
+mv oldfilename.ext newfilename.ext	// rename the file through operating system outside git
+git mv oldfilename.ext newfilename.ext	// renames the file as well as sends to stagin area and done by git
+git add -A	// recursively add any changes and also updates any file that is removed, renamed or deleted.
+git mv newfilename oldfilename	// if new file name in staged but you want to backoff the file from there
+git add renamedfile.ext	// if renamed the file through finder then add it and update the index.
+git add -u	// to update the index
 ```
-	echo "Test jksd" >> start.txt
-	``` ---- this will create the file with the text written on it
-```
-cat start.txt
-``` ---  to see the contents of the file
-```
-git status
-``` --  shows an untracked file which is a file in the working directory which hasnt been added to git
-```
-git add start.txt
-``` --- this will tell git
-```
-git status
-``` -- shows start.txt file in the staging are and ready to be committed, we can still backout from the staging area. It is used to commit at once
-```
-git commit -m "dfgd"
-```
- ```
-git status
-``` -- it tell that this branch is ahead of master branch by 1 commit and working directory is clean
- All files moved from the staging area to the local repository.
- ```
-	git push origin master
-	``` --- remote name is origin and name of the branch to push which is master
-
-
-#part 2
-
- ```
-git init newProject
-``` --- to create new project
- ```
-ls -al
-``` --- show all files including hidden
- ```
-rm -rf newProject
-``` ------remove the directory
-
-
- ```
-mv oldname newname
-``` ---- to rename the folder
- ```
-git init
-``` ----initialize the new directory
- ```
-git status
-``` ---- reminds that we are in master branch 
- ```
-git add .
-``` ------add to staging area
- ```
-git commit -m "dsfdsfs"
-```
- If we remove .git folder then git will not manage the project
-
-
- Join existing project 
-
-	 by forking, we get a personal copy of someone else's repository. Then we can clone it
-	 ```
-	git clone url
-	```
-	 ```
-	git status
-	``` ---- since we cloned so it will tell that we are on branch master and up to date
-	 origin is reference to the remote repository in github. master is the branch on that repository.
-
-
- ```
-git pull origin master
-``` --- this will update the local repository from the remote repository. Best practice.
-
-
- ```
-git commit -am "message"
-``` --- add and commit in single step.
- ```
-git ls-files
-``` ------To check if git is tracking the files or not
-
-
- ```
-git add .
-``` ------it adds all the files recursively from the current folder
-
-
- ```
-git reset HEAD filename.ext
-``` ---- this unstaged the file from the staging area.
- ```
-git checkout --filename.ext
-```  ----  back to the last commit, discard the changes made in the working directory
-
-
- ```
-git mv oldfilename.ext newfilename.ext
-``` --  renames the file and stages too
- ```
-git commit -m "renamed"
-``` ----committed
- ```
-mv oldfilename.ext newfilename.ext
-``` --- this is through operating system outside git
- ```
-git status
-``` ----- this will show that you first deleted it and then added. So we need to use following command
- ```
-	git add -A
-	```  -- --- recursively add any changes and also updates any file that is removed, renamed or deleted.
- ```
-git mv newfilename oldfilename
-``` --- if new file name in staged but you want to backoff the name
- ```
-git add renamedfile.ext
-``` ---- this will add the file that you renamed through finder.. update the index by 
- ```
-git add -u 
-```---updates the index
 
 
  ```
