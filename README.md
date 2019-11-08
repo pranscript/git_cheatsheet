@@ -5,7 +5,7 @@
 ```
 git config --global user.name "Your username"	// to set username 
 git CONFIG --global user.email "your@email.com"	// your email
-git config --global --list						// to see your global configs
+git config --global --list                      // to see your global configs
 ```
 
 #### Random Jargons
