@@ -14,7 +14,7 @@ git config --global --list                      // to see your global configs
 * To get a personal copy of someone else's repository - Forking
 * Reference to the remote repository in github - Origin
 
-## Part 1
+### Part 1
 
 ```
 git clone url                       // to clone a repository into your system, auto creates the directory with the same name. Origin is also set automatically
@@ -27,7 +27,7 @@ git push origin master              // to push the local repository to remote re
 git remote add origin URL           // URL copied from github is set as the origin
 ```
 
-##Part 2
+### Part 2
 
  ```
 git init projectName        // initialize a new project
@@ -41,7 +41,7 @@ git ls-files                // To check if git is tracking the files or not
 ```
 
 
-##Part 3
+### Part 3
 
  ```
 git reset HEAD filename.txt                 // to unstage the file from the staging area.
@@ -54,7 +54,7 @@ git add renamedfile.ext                     // if renamed the file through finde
 git add -u                                  // to update the index
 ```
 
-##Part 4
+### Part 4
 
  ```
 rm filename.ext                             // to remove untracked files. Done at o.s level
@@ -67,7 +67,7 @@ git config --global alias.hist "log --all--graph --decorate"    // will create t
 .gitconfig                                  // file name where all the configs are stored
 ```
 
-##Part 5
+### Part 5
 
 ```
 git diff                        // diff tells whats modified. Shows the content. The differences between two areas
