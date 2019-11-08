@@ -7,9 +7,13 @@ git config --global user.name "Your username"	// to set username
 git CONFIG --global user.email "your@email.com"	// your email
 git config --global --list	// to see your global configs
 ```
-#### To get a repository in the local system - Cloning
-#### To get a personal copy of someone else's repository - Forking
-#### Reference to the remote repository in github - Origin
+
+#### Random Points
+
+..* To get a repository in the local system - Cloning
+..* To get a personal copy of someone else's repository - Forking
+..* Reference to the remote repository in github - Origin
+
 ```
 git clone url	// to clone a repository into your system, auto creates the directorywoth the same name. Origin is also set automatically
 git status	// shows the current branch and status of the files. Shows info about untracked file or files ready to be committed
@@ -18,8 +22,8 @@ cat test.txt	// To see the contents of the file
 git add start.txt	// To add the file from working directory to staging area and is ready to be commited. Now git is tracking the file
 git commit -m "First commit message"	// To commit the changes with a commit message
 git push origin master	// to push the local repository to remote repository. Remote name "origin". Branch name is "master"
+git remote add origin URL  // URL copied from github is set as the origin
 ```
-
 
 #Part 2
 
@@ -48,79 +52,34 @@ git add renamedfile.ext	// if renamed the file through finder then add it and up
 git add -u	// to update the index
 ```
 
+# Part 4
 
  ```
-rm filename.ext
-```  ---- to remove untracked files. 
- ```
-git rm filename.ext
-``` ---- file removed inside git tracked by git -- it will enter in staged
- ```
-git reset HEAD filename.ext
-``` ---- will be unstaged for deletion but still not in working directory
- ```
-git checkout
-``` -- filename.ext --- now it will be back 
+rm filename.ext	// to remove untracked files. Done at o.s level
+git rm filename.ext	// file removed through git, so it is tracked by git and will enter in staged area
+git reset HEAD filename.ext	// will be unstaged for deletion but still not in working directory
+git checkout	// filename.ext --- now it will be back to working directory from staging area
+git log	// shows commit history. First one is the last commit done
+git log	--oneline --graph --decorate --all	// oneline will compress it in one line, graph will show the branches
+git config --global alias.hist "log --all--graph --decorate"	// will create the alias so no need to write the whole thing
+.gitconfig	// file name where all the configs are stored
+```
 
-
- ```
-git help log
-```  --- shows options
- ```
-git log
-``` ----- commit history ---first one is last commit
- ```
-	git log
-	``` --oneline --graph --decorate ------------ oneline will compress in one line, 
-
+# Part 4
 
 ```
-git config --global alias.hist "log --all--graph --decorate"
-```  ----- will create  the alias
-.gitconfig is the file name where the configs are stored
+git diff	// diff tells whats modified. Shows the content. The differences between two areas
+git difftool	//  this will visually tell what changes has been made between working directory and staging area
+git diff HEAD	// this will compare the working directory(all tracked files) and the last commit done in local repository
+git difftool HEAD	// visual representation os the differences
+git diff --staged HEAD	// comparing only files in staging area and last commit(local repository).
+git diff -- README.md	// changes done only to readme
+git difftool -- README.md	// visually see the difference
+git log --oneline	// history of commit compressede in a line
+git diff tdsfysy HEAD	// diff between a particular commit(by its ID) and last commit
+git diff HEAD HEAD^	// difference between last commit and (last commit -1)
+git diff master origin/master	// difference between local and remote repository in master branch
 
-
-.gitignore  ---- which ignore files 
-*.log (to ignore all log files), log (to ignore the folder log)
-
-
-```
-git diff
-``` ------ git status tell its modified but not what .. diff tells whats modified
-```
-git difftool
-``` ---- this will visually tell what changes has been made between working directory and staging
-```
-git diff HEAD
-```------ this will compare the working directory and the last commit(local repository)
-```
-git difftool HEAD
-``` ----- visual representation
-```
-git diff --staged HEAD
-``` ---- comparing staging area and last commit(local repository).
-```
-git diff -- README.md
-``` ------ changes shown only to readme and not other files
-```
-git difftool -- README.md
-```  ----- visually
-```
-git log --oneline
-``` ----- history of commit
-```
-git diff tdsfysy HEAD
-``` ---- diff between that commit and last commit
- ```
-	git diff HEAD HEAD^
-	``` ---- difference between last commit and last commit -1
- ```
-	git diff master origin/master
-	```
-
-
- ```
-	git remote add origin <URL>
 	```
 
 
