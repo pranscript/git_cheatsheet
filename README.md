@@ -17,14 +17,14 @@ git config --global --list                      // to see your global configs
 ## Part 1
 
 ```
-git clone url						// to clone a repository into your system, auto creates the directorywoth the same name. Origin is also set automatically
-git status							// shows the current branch and status of the files. Shows info about untracked file or files ready to be committed
-echo "Test Content" >> test.txt		// To create the file with the text written on it
-cat test.txt						// To see the contents of the file
-git add start.txt					// To add the file from working directory to staging area and is ready to be commited. Now git is tracking the file
-git commit -m "Commit message"		// To commit the changes with a commit message
-git push origin master				// to push the local repository to remote repository. Remote name "origin". Branch name is "master"
-git remote add origin URL  			// URL copied from github is set as the origin
+git clone url                       // to clone a repository into your system, auto creates the directorywoth the same name. Origin is also set automatically
+git status                          // shows the current branch and status of the files. Shows info about untracked file or files ready to be committed
+echo "Test Content" >> test.txt     // To create the file with the text written on it
+cat test.txt                        // To see the contents of the file
+git add start.txt                   // To add the file from working directory to staging area and is ready to be commited. Now git is tracking the file
+git commit -m "Commit message"      // To commit the changes with a commit message
+git push origin master              // to push the local repository to remote repository. Remote name "origin". Branch name is "master"
+git remote add origin URL           // URL copied from github is set as the origin
 ```
 
 ##Part 2
