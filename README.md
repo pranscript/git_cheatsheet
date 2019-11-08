@@ -31,7 +31,7 @@ git remote add origin URL  			// URL copied from github is set as the origin
 
  ```
 git init projectName		// initialize a new project
-ls -al		// show all files including hidden
+ls -al						// show all files including hidden
 rm -rf newProject			// removes the directory
 mv oldname newname			// renames the directory
 git add .					// adds all files to the staging area from working directory
