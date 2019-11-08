@@ -17,13 +17,17 @@ git config --global --list                      // to see your global configs
 ### Basics
 
 ```
-git clone url                       // to clone a repository into your system, auto creates the directory with the same name. Origin is also set automatically
-git status                          // shows the current branch and status of the files. Shows info about untracked file or files ready to be committed
+git clone url                       /* to clone a repository into your system, auto creates the 
+                                    */directory with the same name. Origin is also set automatically
+git status                          /* shows the current branch and status of the files. Shows info 
+                                    */about untracked file or files ready to be committed
 echo "Test Content" >> test.txt     // To create the file with the text written on it
 cat test.txt                        // To see the contents of the file
-git add start.txt                   // To add the file from working directory to staging area and is ready to be commited. Now git is tracking the file
+git add start.txt                   /* To add the file from working directory to staging area and is 
+                                    */ready to be commited. Now git is tracking the file
 git commit -m "Commit message"      // To commit the changes with a commit message
-git push origin master              // to push the local repository to remote repository. Remote name "origin". Branch name is "master"
+git push origin master              /* to push the local repository to remote repository. Remote name 
+                                    */"origin". Branch name is "master"
 git remote add origin URL           // URL copied from github is set as the origin
 ```
 
@@ -35,7 +39,8 @@ ls -al                      // show all files including hidden
 rm -rf newProject           // removes the directory
 mv oldname newname          // renames the directory
 git add .                   // adds all files to the staging area from working directory
-git pull origin master      // Updates the local repository from the remote repository. It is a good practice to pull before push
+git pull origin master      /* Updates the local repository from the remote repository. It is a good 
+                            */practice to pull before push
 git commit -am "message"    // Add files to staging area and committing in a single step
 git ls-files                // To check if git is tracking the files or not
 ```
@@ -45,12 +50,17 @@ git ls-files                // To check if git is tracking the files or not
 
  ```
 git reset HEAD filename.txt                 // to unstage the file from the staging area.
-git checkout --filename.ext                 // back to the last commit, discard the changes made in the working directory
+git checkout --filename.ext                 /* back to the last commit, discard the changes made 
+                                            */in the working directory
 mv oldfilename.ext newfilename.ext          // rename the file through operating system outside git
-git mv oldfilename.ext newfilename.ext      // renames the file as well as sends to stagin area and done by git
-git add -A                                  // recursively add any changes and also updates any file that is removed, renamed or deleted.
-git mv newfilename oldfilename              // if new file name in staged but you want to backoff the file from there
-git add renamedfile.ext                     // if renamed the file through finder then add it and update the index.
+git mv oldfilename.ext newfilename.ext      /* renames the file as well as sends to stagin area and 
+                                            */done by git
+git add -A                                  /* recursively add any changes and also updates any file 
+                                            */that is removed, renamed or deleted.
+git mv newfilename oldfilename              /* if new file name in staged but you want to backoff the 
+                                            */file from there
+git add renamedfile.ext                     /* if renamed the file through finder then add it and 
+                                            */update the index.
 git add -u                                  // to update the index
 ```
 
@@ -58,21 +68,29 @@ git add -u                                  // to update the index
 
  ```
 rm filename.ext                             // to remove untracked files. Done at o.s level
-git rm filename.ext                         // file removed through git, so it is tracked by git and will enter in staged area
-git reset HEAD filename.ext                 // will be unstaged for deletion but still not in working directory
-git checkout                                // filename.ext --- now it will be back to working directory from staging area
+git rm filename.ext                         /* file removed through git, so it is tracked by git and 
+                                            */will enter in staged area
+git reset HEAD filename.ext                 /* will be unstaged for deletion but still not in 
+                                            */working directory
+git checkout                                /* filename.ext --- now it will be back to working 
+                                            */directory from staging area
 git log                                     // shows commit history. First one is the last commit done
-git log	--oneline --graph --decorate --all  // oneline will compress it in one line, graph will show the branches
-git config --global alias.hist "log --all--graph --decorate"    // will create the alias so no need to write the whole thing
+git log	--oneline --graph --decorate --all  /* oneline will compress it in one line, graph will 
+                                            */show the branches
+git config --global alias.hist "log --all--graph --decorate"    /* will create the alias so no need 
+                                            */to write the whole thing
 .gitconfig                                  // file name where all the configs are stored
 ```
 
 ### Diff Tool 
 
 ```
-git diff                        // diff tells whats modified. Shows the content. The differences between two areas
-git difftool                    // this will visually tell what changes has been made between working directory and staging area
-git diff HEAD                   // this will compare the working directory(all tracked files) and the last commit done in local repository
+git diff                        /* diff tells whats modified. Shows the content. The differences 
+                                */between two areas
+git difftool                    /* this will visually tell what changes has been made between 
+                                */working directory and staging area
+git diff HEAD                   /* this will compare the working directory(all tracked files) 
+                                */and the last commit done in local repository
 git difftool HEAD               // visual representation os the differences
 git diff --staged HEAD          // comparing only files in staging area and last commit(local repository).
 git diff -- README.md           // changes done only to readme
@@ -86,7 +104,8 @@ git diff master origin/master   // difference between local and remote repositor
 ### Branching
 
 ```
-git branch -a                     // list  all local and remote branches with an * on the current active branch.
+git branch -a                     /* list  all local and remote branches with an * on the 
+                                  */current active branch.
 git branch                        // shows all local branches
 git branch branchname             // new branch created
 git checkout branchname           // to switch between available branches
@@ -96,7 +115,9 @@ git branch -d branchname          // to delete a branch you are currently not on
 git checkout -b title-change      // this creates a branch and switches to it in one go
 git diff master branchname        // diff between two branches
 git merge branchOfSourceToCurrent // this will merge the branch to the current branch(fast forward)
-fast forward                      // git just placed all the commits on the master bracnch, only possible when no changes being made on target branch, means if no commits are made on master branch then it is possible 
+fast forward                      // git just placed all the commits on the master bracnch, 
+                                  only possible when no changes being made on target branch, means 
+								  if no commits are made on master branch then it is possible 
 git branch -d banchname           // to delete the merged branch
 git merge branchname --no-ff      // this will preserve that we branched off from master and now merging, will result in a merge commit
 git merge branchname -m "Merge changes"
